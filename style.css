@@ -20,8 +20,7 @@
 }
 
 body {
-    /* NOVO: Fundo com imagem do jogo */
-    background-image: url('./images/capa.jpg'); /* <-- ATUALIZE ESTE NOME DE ARQUIVO */
+    background-image: url('./images/capa.jpg'); 
     background-size: cover; /* Cobre todo o fundo */
     background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
     background-color: #1e1e1e; /* Cor de fallback se a imagem falhar */
@@ -59,13 +58,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-    /* NOVO: Fundo translúcido para o MAIN, permitindo ver o background */
     background-color: rgba(30, 30, 30, 0.85); /* Fundo escuro semi-transparente */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    min-height: 80vh; /* Garante que o fundo translúcido seja grande o suficiente */
+    min-height: 80vh; 
 }
 
-/* --- Filtro (Barra de Pesquisa) --- */
 .filter-bar {
     padding: 20px 0;
     text-align: center;
@@ -98,7 +95,6 @@ body {
     padding: 20px 0 30px 0; /* Mais padding interno */
 }
 
-/* --- Card Style (NOVO: Borda Dourada e Sutilmente Metálico) --- */
 .character-card {
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
@@ -162,14 +158,13 @@ body {
     text-transform: uppercase;
 }
 
-/* --- Estilos do Rodapé (Footer) --- */
 .footer {
     padding: 20px;
     background-color: var(--bg-light); 
     border-top: 3px solid var(--secondary-accent);
     text-align: center;
     color: var(--text-muted);
-    margin-top: 0; /* Remove a margem extra, pois o container já cuida do espaçamento */
+    margin-top: 0; 
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -190,7 +185,6 @@ body {
     text-decoration: underline;
 }
 
-/* --- Media Query para Desktop --- */
 @media (min-width: 768px) {
     .character-grid {
         /* Desktop: 5 colunas */
