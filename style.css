@@ -1,0 +1,199 @@
+/* Paleta de Cores de Expedition/Aventura (Escura e Dourada) */
+:root {
+    --bg-dark: #1e1e1e;           
+    --bg-light: #2c2c2c;          
+    --card-bg: #444444;           
+    --primary-accent: #f7d730;    
+    --secondary-accent: #a01f25;  
+    --text-light: #f5f5f5;        
+    --text-muted: #aaaaaa;        
+    --shadow-color: rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+    --border-radius: 6px;
+}
+
+/* Estilos Globais e Mobile-First */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; 
+}
+
+body {
+    /* NOVO: Fundo com imagem do jogo */
+    background-image: url('./images/capa.jpg'); /* <-- ATUALIZE ESTE NOME DE ARQUIVO */
+    background-size: cover; /* Cobre todo o fundo */
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+    background-color: #1e1e1e; /* Cor de fallback se a imagem falhar */
+    
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+/* O fundo escuro do cabeçalho e rodapé ajudam a destacá-los do fundo */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--bg-light); /* Fundo sólido para o cabeçalho */
+    border-bottom: 3px solid var(--secondary-accent);
+    box-shadow: 0 5px 10px var(--shadow-color);
+}
+
+.logo-text {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary-accent);
+    text-shadow: 1px 1px 0 #000, 2px 2px 0 var(--secondary-accent);
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.header h2 {
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    /* NOVO: Fundo translúcido para o MAIN, permitindo ver o background */
+    background-color: rgba(30, 30, 30, 0.85); /* Fundo escuro semi-transparente */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    min-height: 80vh; /* Garante que o fundo translúcido seja grande o suficiente */
+}
+
+/* --- Filtro (Barra de Pesquisa) --- */
+.filter-bar {
+    padding: 20px 0;
+    text-align: center;
+}
+
+#name-filter {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    /* Ajuste para ter fundo mais claro, destacando o filtro */
+    background-color: var(--card-bg); 
+    border: 1px solid var(--primary-accent);
+    color: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+#name-filter::placeholder {
+    color: var(--text-muted);
+}
+#name-filter:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+}
+
+/* --- Grid de Cards (Layout) --- */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px;
+    padding: 20px 0 30px 0; /* Mais padding interno */
+}
+
+/* --- Card Style (NOVO: Borda Dourada e Sutilmente Metálico) --- */
+.character-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    overflow: hidden; 
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Borda Dupla para Efeito Metálico */
+    border: 1px solid var(--primary-accent);
+    outline: 2px solid var(--secondary-accent);
+    outline-offset: -3px;
+    cursor: pointer;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.card-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    overflow: hidden; 
+    background-color: #333; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.character-card img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+    filter: brightness(0.9); 
+    transition: filter 0.3s;
+}
+.character-card:hover img {
+    filter: brightness(1.1); 
+}
+
+.card-info {
+    padding: 15px 10px;
+}
+
+.card-info h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.card-info p {
+    font-size: 0.8em;
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: var(--primary-accent); 
+    color: var(--bg-dark); 
+    border-radius: 20px; 
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* --- Estilos do Rodapé (Footer) --- */
+.footer {
+    padding: 20px;
+    background-color: var(--bg-light); 
+    border-top: 3px solid var(--secondary-accent);
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 0; /* Remove a margem extra, pois o container já cuida do espaçamento */
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: var(--primary-accent); 
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: var(--text-light); 
+    text-decoration: underline;
+}
+
+/* --- Media Query para Desktop --- */
+@media (min-width: 768px) {
+    .character-grid {
+        /* Desktop: 5 colunas */
+        grid-template-columns: repeat(5, 1fr); 
+    }
+}
